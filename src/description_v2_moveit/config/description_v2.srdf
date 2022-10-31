@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="description_v2">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="leg_fl">
+        <joint name="j_flhr"/>
+        <joint name="j_flhp"/>
+        <joint name="j_flkp"/>
+    </group>
+    <group name="leg_fr">
+        <joint name="j_frhr"/>
+        <joint name="j_frhp"/>
+        <joint name="j_frkp"/>
+    </group>
+    <group name="leg_rl">
+        <joint name="j_rlhp"/>
+        <joint name="j_rlkp"/>
+        <joint name="j_rlhr"/>
+    </group>
+    <group name="leg_rr">
+        <joint name="j_rrhr"/>
+        <joint name="j_rrhp"/>
+        <joint name="j_rrkp"/>
+    </group>
+    <group name="leg_all">
+        <group name="leg_fl"/>
+        <group name="leg_fr"/>
+        <group name="leg_rl"/>
+        <group name="leg_rr"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="home" group="leg_all">
+        <joint name="j_flhp" value="0"/>
+        <joint name="j_flhr" value="0"/>
+        <joint name="j_flkp" value="0"/>
+        <joint name="j_frhp" value="0"/>
+        <joint name="j_frhr" value="0"/>
+        <joint name="j_frkp" value="0"/>
+        <joint name="j_rlhp" value="0"/>
+        <joint name="j_rlhr" value="0"/>
+        <joint name="j_rlkp" value="0"/>
+        <joint name="j_rrhp" value="0"/>
+        <joint name="j_rrhr" value="0"/>
+        <joint name="j_rrkp" value="0"/>
+    </group_state>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="virtual_joint" type="floating" parent_frame="world" child_link="base_link"/>
+    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="virtual_joint"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="base_link" link2="flhr" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="flkp" reason="Never"/>
+    <disable_collisions link1="base_link" link2="frhr" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="frkp" reason="Never"/>
+    <disable_collisions link1="base_link" link2="rlhr" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="rlkp" reason="Never"/>
+    <disable_collisions link1="base_link" link2="rrhr" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="rrkp" reason="Never"/>
+    <disable_collisions link1="flhp" link2="flhr" reason="Adjacent"/>
+    <disable_collisions link1="flhp" link2="flkp" reason="Adjacent"/>
+    <disable_collisions link1="flhp" link2="frhp" reason="Never"/>
+    <disable_collisions link1="flhp" link2="frhr" reason="Never"/>
+    <disable_collisions link1="flhp" link2="frkp" reason="Never"/>
+    <disable_collisions link1="flhp" link2="rlhp" reason="Never"/>
+    <disable_collisions link1="flhp" link2="rlhr" reason="Never"/>
+    <disable_collisions link1="flhp" link2="rrhp" reason="Never"/>
+    <disable_collisions link1="flhp" link2="rrhr" reason="Never"/>
+    <disable_collisions link1="flhp" link2="rrkp" reason="Never"/>
+    <disable_collisions link1="flhr" link2="flkp" reason="Never"/>
+    <disable_collisions link1="flhr" link2="frhp" reason="Never"/>
+    <disable_collisions link1="flhr" link2="frhr" reason="Never"/>
+    <disable_collisions link1="flhr" link2="frkp" reason="Never"/>
+    <disable_collisions link1="flhr" link2="rlhp" reason="Never"/>
+    <disable_collisions link1="flhr" link2="rlhr" reason="Never"/>
+    <disable_collisions link1="flhr" link2="rlkp" reason="Never"/>
+    <disable_collisions link1="flhr" link2="rrhp" reason="Never"/>
+    <disable_collisions link1="flhr" link2="rrhr" reason="Never"/>
+    <disable_collisions link1="flhr" link2="rrkp" reason="Never"/>
+    <disable_collisions link1="flkp" link2="frhp" reason="Never"/>
+    <disable_collisions link1="flkp" link2="frhr" reason="Never"/>
+    <disable_collisions link1="flkp" link2="frkp" reason="Never"/>
+    <disable_collisions link1="flkp" link2="rlhp" reason="Never"/>
+    <disable_collisions link1="flkp" link2="rlhr" reason="Never"/>
+    <disable_collisions link1="flkp" link2="rrhp" reason="Never"/>
+    <disable_collisions link1="flkp" link2="rrhr" reason="Never"/>
+    <disable_collisions link1="flkp" link2="rrkp" reason="Never"/>
+    <disable_collisions link1="frhp" link2="frhr" reason="Adjacent"/>
+    <disable_collisions link1="frhp" link2="frkp" reason="Adjacent"/>
+    <disable_collisions link1="frhp" link2="rlhp" reason="Never"/>
+    <disable_collisions link1="frhp" link2="rlhr" reason="Never"/>
+    <disable_collisions link1="frhp" link2="rlkp" reason="Never"/>
+    <disable_collisions link1="frhp" link2="rrhp" reason="Never"/>
+    <disable_collisions link1="frhp" link2="rrhr" reason="Never"/>
+    <disable_collisions link1="frhp" link2="rrkp" reason="Never"/>
+    <disable_collisions link1="frhr" link2="frkp" reason="Never"/>
+    <disable_collisions link1="frhr" link2="rlhp" reason="Never"/>
+    <disable_collisions link1="frhr" link2="rlhr" reason="Never"/>
+    <disable_collisions link1="frhr" link2="rlkp" reason="Never"/>
+    <disable_collisions link1="frhr" link2="rrhp" reason="Never"/>
+    <disable_collisions link1="frhr" link2="rrhr" reason="Never"/>
+    <disable_collisions link1="frhr" link2="rrkp" reason="Never"/>
+    <disable_collisions link1="frkp" link2="rlhp" reason="Never"/>
+    <disable_collisions link1="frkp" link2="rlhr" reason="Never"/>
+    <disable_collisions link1="frkp" link2="rlkp" reason="Never"/>
+    <disable_collisions link1="frkp" link2="rrhp" reason="Never"/>
+    <disable_collisions link1="frkp" link2="rrhr" reason="Never"/>
+    <disable_collisions link1="rlhp" link2="rlhr" reason="Adjacent"/>
+    <disable_collisions link1="rlhp" link2="rlkp" reason="Adjacent"/>
+    <disable_collisions link1="rlhp" link2="rrhp" reason="Never"/>
+    <disable_collisions link1="rlhp" link2="rrhr" reason="Never"/>
+    <disable_collisions link1="rlhp" link2="rrkp" reason="Never"/>
+    <disable_collisions link1="rlhr" link2="rlkp" reason="Never"/>
+    <disable_collisions link1="rlhr" link2="rrhp" reason="Never"/>
+    <disable_collisions link1="rlhr" link2="rrhr" reason="Never"/>
+    <disable_collisions link1="rlhr" link2="rrkp" reason="Never"/>
+    <disable_collisions link1="rlkp" link2="rrhp" reason="Never"/>
+    <disable_collisions link1="rlkp" link2="rrhr" reason="Never"/>
+    <disable_collisions link1="rrhp" link2="rrhr" reason="Adjacent"/>
+    <disable_collisions link1="rrhp" link2="rrkp" reason="Adjacent"/>
+    <disable_collisions link1="rrhr" link2="rrkp" reason="Never"/>
+</robot>

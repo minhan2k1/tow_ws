@@ -1,0 +1,43 @@
+controller_list:
+  - name: fake_leg_fl_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - j_flhr
+      - j_flhp
+      - j_flkp
+  - name: fake_leg_fr_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - j_frhr
+      - j_frhp
+      - j_frkp
+  - name: fake_leg_rl_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - j_rlhr
+      - j_rlhp
+      - j_rlkp
+  - name: fake_leg_rr_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - j_rrhr
+      - j_rrhp
+      - j_rrkp
+  - name: fake_leg_all_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - j_flhr
+      - j_flhp
+      - j_flkp
+      - j_frhr
+      - j_frhp
+      - j_frkp
+      - j_rlhr
+      - j_rlhp
+      - j_rlkp
+      - j_rrhr
+      - j_rrhp
+      - j_rrkp
+initial:  # Define initial robot poses per group
+  - group: leg_all
+    pose: home

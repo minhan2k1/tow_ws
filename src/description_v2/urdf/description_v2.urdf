@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="description_v2">
+    <link name="base_link">
+        <inertial>
+            <origin xyz="1.10071300954903E-13 -0.0804314674208866 -3.72594215378661E-13" rpy="0 0 0" />
+            <mass value="2.59149526077751" />
+            <inertia ixx="0.0556620512133462" ixy="1.41894541422012E-08" ixz="-9.1623414139393E-16" iyy="0.0609675024722487" iyz="1.98357895211907E-15" izz="0.00751873000876317" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/base_link.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/base_link.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="flhr">
+        <inertial>
+            <origin xyz="-0.0700708098978081 2.63677968348475E-16 -0.000779776432071576" rpy="0 0 0" />
+            <mass value="0.194475232481071" />
+            <inertia ixx="4.95706831903783E-05" ixy="3.56082054761659E-20" ixz="1.47917712706166E-05" iyy="0.000249341771263753" iyz="-4.37225042511692E-22" izz="0.000252242436696808" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/flhr.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/flhr.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_flhr" type="revolute">
+        <origin xyz="0.0574999999996618 -0.200299999999298 -0.114999999999853" rpy="1.5707963267949 0 1.5707963267949" />
+        <parent link="base_link" />
+        <child link="flhr" />
+        <axis xyz="1 0 0" />
+        <limit lower="-0.5236" upper="0.34907" effort="10" velocity="10" />
+    </joint>
+    <link name="flhp">
+        <inertial>
+            <origin xyz="0.0625017771112232 -0.00995729962485614 0.0500334632748604" rpy="0 0 0" />
+            <mass value="0.54805543393771" />
+            <inertia ixx="0.000366842886944484" ixy="0.000385861397834549" ixz="1.60537120413725E-05" iyy="0.00215260706012929" iyz="-4.291557447141E-06" izz="0.00242131957628299" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/flhp.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/flhp.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_flhp" type="revolute">
+        <origin xyz="-0.11 0 0.01935" rpy="0 0 0.23805" />
+        <parent link="flhr" />
+        <child link="flhp" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.5708" upper="0" effort="10" velocity="10" />
+    </joint>
+    <link name="flkp">
+        <inertial>
+            <origin xyz="-0.142429073555873 -0.095200420459897 0.0169765532365606" rpy="0 0 0" />
+            <mass value="0.121696080036638" />
+            <inertia ixx="9.46916554390342E-05" ixy="-0.000113408885572565" ixz="6.44304181281108E-11" iyy="0.000189243119965143" iyz="-1.12326363178312E-10" izz="0.000269729577438877" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/flkp.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/flkp.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_flkp" type="revolute">
+        <origin xyz="0.265328222917277 -0.0707172830612114 0.0630234621858951" rpy="0 0 -0.584123837375273" />
+        <parent link="flhp" />
+        <child link="flkp" />
+        <axis xyz="0 0 1" />
+        <limit lower="0" upper="1.6057" effort="10" velocity="10" />
+    </joint>
+    <link name="rlhr">
+        <inertial>
+            <origin xyz="0.0798069766837164 8.86630914381792E-08 -0.000779776427032086" rpy="0 0 0" />
+            <mass value="0.194475232481071" />
+            <inertia ixx="4.95706831903784E-05" ixy="-9.74751830526731E-10" ixz="8.66258797825681E-06" iyy="0.000250295953234289" iyz="-3.25265625917476E-10" izz="0.000253196618594397" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rlhr.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rlhr.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_rlhr" type="revolute">
+        <origin xyz="0.0574999999996628 0.200300000000701 -0.114999999999858" rpy="1.57068414749628 0 1.5707963267949" />
+        <parent link="base_link" />
+        <child link="rlhr" />
+        <axis xyz="1 0 0" />
+        <limit lower="-0.5236" upper="0.34907" effort="10" velocity="10" />
+    </joint>
+    <link name="rlhp">
+        <inertial>
+            <origin xyz="0.0625017771112245 -0.00995729962485425 0.0500334632748606" rpy="0 0 0" />
+            <mass value="0.548055433937709" />
+            <inertia ixx="0.000366842886944487" ixy="0.000385861397834558" ixz="1.60537120413725E-05" iyy="0.00215260706012928" iyz="-4.29155744714101E-06" izz="0.00242131957628299" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rlhp.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rlhp.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_rlhp" type="revolute">
+        <origin xyz="0.043 0 0.01935" rpy="0.00011195 0 0.063519" />
+        <parent link="rlhr" />
+        <child link="rlhp" />
+        <axis xyz="0 0 1" />
+        <limit lower="-1.3963" upper="0" effort="10" velocity="10" />
+    </joint>
+    <link name="rlkp">
+        <inertial>
+            <origin xyz="-0.142429113121171 -0.0952004635662916 0.0169765557128041" rpy="0 0 0" />
+            <mass value="0.121696119554221" />
+            <inertia ixx="9.46916642378556E-05" ixy="-0.000113408954060324" ixz="6.22689213955761E-11" iyy="0.000189243100533313" iyz="-9.73939890663566E-11" izz="0.000269729635188775" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rlkp.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rlkp.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_rlkp" type="revolute">
+        <origin xyz="0.265328222917278 -0.0707172830612103 0.0630234621858946" rpy="0 0 -0.584123837375259" />
+        <parent link="rlhp" />
+        <child link="rlkp" />
+        <axis xyz="0 0 1" />
+        <limit lower="0" upper="1.6057" effort="10" velocity="10" />
+    </joint>
+    <link name="frhr">
+        <inertial>
+            <origin xyz="-0.0700708098978081 2.4980018054066E-16 -0.000779776432071645" rpy="0 0 0" />
+            <mass value="0.194475232481071" />
+            <inertia ixx="4.95706831903784E-05" ixy="8.70781725227972E-21" ixz="1.47917712706164E-05" iyy="0.000249341771263753" iyz="-1.6648663486486E-20" izz="0.000252242436696808" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/frhr.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/frhr.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_frhr" type="revolute">
+        <origin xyz="-0.0575000000003381 -0.200299999999298 -0.114999999999853" rpy="-1.5707963267949 0 1.5707963267949" />
+        <parent link="base_link" />
+        <child link="frhr" />
+        <axis xyz="1 0 0" />
+        <limit lower="-0.34907" upper="0.5236" effort="10" velocity="10" />
+    </joint>
+    <link name="frhp">
+        <inertial>
+            <origin xyz="0.0591532407326759 -0.0178475201337677 -0.0629327952000434" rpy="0 0 0" />
+            <mass value="0.54805543393771" />
+            <inertia ixx="0.000595462574673477" ixy="0.000709669958273173" ixz="3.83623609434648E-05" iyy="0.00192565530652331" iyz="-2.97095678996208E-05" izz="0.00241965164215998" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/frhp.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/frhp.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_frhp" type="revolute">
+        <origin xyz="-0.11 0 0.0079623" rpy="3.0667 0 -0.44362" />
+        <parent link="frhr" />
+        <child link="frhp" />
+        <axis xyz="0 0.074816 0.9972" />
+        <limit lower="-1.5708" upper="0" effort="10" velocity="10" />
+    </joint>
+    <link name="frkp">
+        <inertial>
+            <origin xyz="-0.142429073555874 -0.0952004204598976 -0.0169765223916483" rpy="0 0 0" />
+            <mass value="0.121696080036638" />
+            <inertia ixx="9.46916554390361E-05" ixy="-0.000113408885572566" ixz="6.4430418163184E-11" iyy="0.000189243119965144" iyz="-1.12326363238963E-10" izz="0.00026972957743888" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/frkp.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/frkp.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_frkp" type="revolute">
+        <origin xyz="0.245306433029375 -0.117475688203158 -0.0834340122882161" rpy="0.0527739825632841 0.0531545790485347 -0.788291160012052" />
+        <parent link="frhp" />
+        <child link="frkp" />
+        <axis xyz="0 0 1" />
+        <limit lower="0" upper="1.6057" effort="10" velocity="10" />
+    </joint>
+    <link name="rrhr">
+        <inertial>
+            <origin xyz="0.0798069766837167 -1.19348975147204E-15 -0.000779776432071305" rpy="0 0 0" />
+            <mass value="0.194475232481071" />
+            <inertia ixx="4.95706831903783E-05" ixy="1.2072188527264E-18" ixz="8.66258803309774E-06" iyy="0.000250295953197816" iyz="-1.20524956023707E-19" izz="0.000253196618630871" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rrhr.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rrhr.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_rrhr" type="revolute">
+        <origin xyz="-0.057500000000338 0.200300000000701 -0.114999999999853" rpy="-1.5707963267949 0 1.5707963267949" />
+        <parent link="base_link" />
+        <child link="rrhr" />
+        <axis xyz="1 0 0" />
+        <limit lower="-0.34907" upper="0.5236" effort="10" velocity="10" />
+    </joint>
+    <link name="rrhp">
+        <inertial>
+            <origin xyz="0.0591532407326774 -0.0178475201337657 -0.0629327952000437" rpy="0 0 0" />
+            <mass value="0.54805543393771" />
+            <inertia ixx="0.000595462574673472" ixy="0.000709669958273168" ixz="3.83623609434638E-05" iyy="0.00192565530652331" iyz="-2.97095678996202E-05" izz="0.00241965164215999" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rrhp.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rrhp.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_rrhp" type="revolute">
+        <origin xyz="0.043 0 0.0079623" rpy="3.0667 0 -0.26909" />
+        <parent link="rrhr" />
+        <child link="rrhp" />
+        <axis xyz="0 0.074816 0.9972" />
+        <limit lower="-1.3963" upper="0" effort="10" velocity="10" />
+    </joint>
+    <link name="rrkp">
+        <inertial>
+            <origin xyz="-0.14242911312117 -0.0952004635662914 -0.0169765199154071" rpy="0 0 0" />
+            <mass value="0.121696119554221" />
+            <inertia ixx="9.46916642378566E-05" ixy="-0.000113408954060326" ixz="6.22689214339487E-11" iyy="0.000189243100533313" iyz="-9.73939890610832E-11" izz="0.000269729635188776" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rrkp.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://description_v2/meshes/rrkp.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="j_rrkp" type="revolute">
+        <origin xyz="0.24531 -0.11748 -0.083434" rpy="0.052774 0.053155 -0.78829" />
+        <parent link="rrhp" />
+        <child link="rrkp" />
+        <axis xyz="0 0 1" />
+        <limit lower="0" upper="1.6057" effort="10" velocity="10" />
+    </joint>
+    <link name="camera_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.015 0.08 0.022" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.015 0.08 0.022" />
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1e-5" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+        </inertial>
+    </link>
+    <joint name="camera_mount" type="fixed">
+        <origin xyz="0 -0.35 0.022" rpy="0 0 -1.57075" />
+        <parent link="base_link" />
+        <child link="camera_link" />
+    </joint>
+    <!--
+        <gazebo reference="camera_link">
+            <sensor type="camera" name="camera">
+            <update_rate>30.0</update_rate>
+            <camera name="head">
+                <horizontal_fov>1.3962634</horizontal_fov>
+                <image>
+                    <width>800</width>
+                    <height>800</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.02</near>
+                    <far>300</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>                    
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+            </camera>
+            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                <alwaysOn>true</alwaysOn>
+                <updateRate>0.0</updateRate>
+                <cameraName>description_v2/camera</cameraName>
+                <imageTopicName>image_raw</imageTopicName>
+                <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+                <frameName>camera_link</frameName>
+                <hackBaseline>0.07</hackBaseline>
+                <distortionK1>0.0</distortionK1>
+                <distortionK2>0.0</distortionK2>
+                <distortionK3>0.0</distortionK3>
+                <distortionT1>0.0</distortionT1>
+                <distortionT2>0.0</distortionT2>
+            </plugin>
+            </sensor>
+        </gazebo>
+    -->
+    <gazebo reference="camera_link">
+        <sensor name="camera_link_camera" type="depth">
+            <update_rate>20</update_rate>
+            <camera>
+                <horizontal_fov>1.047198</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>3</far>
+                </clip>
+            </camera>
+            <plugin name="camera_link_controller" filename="libgazebo_ros_openni_kinect.so">
+                <baseline>0.2</baseline>
+                <alwaysOn>true</alwaysOn>
+                <updateRate>1.0</updateRate>
+                <cameraName>description_v2/camera</cameraName>
+                <imageTopicName>/camera/color/image_raw</imageTopicName>
+                <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
+                <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+                <depthImageInfoTopicName>/camera/depth/camera_info</depthImageInfoTopicName>
+                <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+                <frameName>depth_camera_link</frameName>
+                <pointCloudCutoff>0.5</pointCloudCutoff>
+                <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+                <distortionK1>0.00000001</distortionK1>
+                <distortionK2>0.00000001</distortionK2>
+                <distortionK3>0.00000001</distortionK3>
+                <distortionT1>0.00000001</distortionT1>
+                <distortionT2>0.00000001</distortionT2>
+                <CxPrime>0</CxPrime>
+                <Cx>0</Cx>
+                <Cy>0</Cy>
+                <focalLength>0</focalLength>
+                <hackBaseline>0</hackBaseline>
+            </plugin>
+        </sensor>
+        <plugin name="gazebo_ros_control">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+    <transmission name="trans_j_flhr">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_flhr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_flhr_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_flhp">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_flhp">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_flhp_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_flkp">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_flkp">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_flkp_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_rlhr">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_rlhr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_rlhr_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_rlhp">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_rlhp">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_rlhp_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_rlkp">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_rlkp">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_rlkp_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_frhr">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_frhr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_frhr_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_frhp">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_frhp">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_frhp_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_frkp">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_frkp">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_frkp_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_rrhr">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_rrhr">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_rrhr_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_rrhp">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_rrhp">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_rrhp_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_j_rrkp">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="j_rrkp">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="j_rrkp_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+    <gazebo reference="base_link">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="flhr">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="flhp">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="flkp">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="rlhr">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="rlhp">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="rlkp">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="frhr">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="frhp">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="frkp">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="rrhr">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="rrhp">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+    <gazebo reference="rrkp">
+        <mu1>1.5</mu1>
+        <mu2>1.5</mu2>
+        <kp>1e15</kp>
+        <kd>1e15</kd>
+    </gazebo>
+</robot>
+

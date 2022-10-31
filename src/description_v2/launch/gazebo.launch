@@ -1,0 +1,67 @@
+<launch>
+  <arg name = "controller_type" default = "trajectories"/>
+
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find description_v2)/urdf/description_v2.urdf -urdf -model description_v2 -z 1"
+    output="screen" />
+  
+  <param
+    name="robot_description"
+    textfile="$(find description_v2)/urdf/description_v2.urdf" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="60.0" />
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find description_v2)/config/urdf.rviz"/>
+
+  <group if = "$(eval arg('controller_type') == 'joints')">
+    <rosparam command="load" file="$(find description_v2)/config/ros_joints_control.yaml"/>
+
+    <node name="description_v2_controller_spawner" pkg="controller_manager" type="spawner"
+      respawn="false"  output="screen" 
+      args="joint_states_controller
+            frhr_joint_controller
+            frhp_joint_controller
+            frkp_joint_controller
+            rrhr_joint_controller
+            rrhp_joint_controller
+            rrkp_joint_controller
+            flhr_joint_controller
+            flhp_joint_controller
+            flkp_joint_controller
+            rlhr_joint_controller
+            rlhp_joint_controller
+            rlkp_joint_controller
+            --shutdown-timeout 3"/>
+  </group>
+
+  <group if = "$(eval arg('controller_type') == 'trajectories')">
+    <rosparam command="load" file="$(find description_v2)/config/ros_trajectories_control.yaml"/>
+
+    <node name="description_v2_controller_spawner" pkg="controller_manager" type="spawner"
+      respawn="false"  output="screen" 
+      args="joint_states_controller
+            leg_fl_controller
+            leg_fr_controller
+            leg_rl_controller
+            leg_rr_controller
+            leg_all_controller           
+            --shutdown-timeout 3"/>
+  </group>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="map_joint_broadcaster_0" args="0 0 0 0 0 0 map base_link" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="depth_camera_link_broadcaster" args="0 -0.35 0.022 -3.14159 0 -1.57075 base_link depth_camera_link" />
+
+  <include file="$(dirname)/octomap.launch" />
+
+</launch>

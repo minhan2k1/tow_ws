@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: description_v2
+    relative_path: urdf/description_v2.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/description_v2.srdf
+  CONFIG:
+    author_name: Le MInh An
+    author_email: minhan169.mal@gmail.com
+    generated_timestamp: 1665668641

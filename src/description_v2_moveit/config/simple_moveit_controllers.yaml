@@ -1,0 +1,50 @@
+controller_list:
+  - name: leg_fl_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - j_flhr
+      - j_flhp
+      - j_flkp
+  - name: leg_fr_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - j_frhr
+      - j_frhp
+      - j_frkp
+  - name: leg_rl_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - j_rlhr
+      - j_rlhp
+      - j_rlkp
+  - name: leg_rr_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - j_rrhr
+      - j_rrhp
+      - j_rrkp
+  - name: leg_all_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - j_flhr
+      - j_flhp
+      - j_flkp
+      - j_frhr
+      - j_frhp
+      - j_frkp
+      - j_rlhr
+      - j_rlhp
+      - j_rlkp
+      - j_rrhr
+      - j_rrhp
+      - j_rrkp

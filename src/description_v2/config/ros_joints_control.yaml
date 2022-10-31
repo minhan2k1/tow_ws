@@ -1,0 +1,64 @@
+
+joint_states_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 200
+
+frhr_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_frhr
+    pid: {p: 100.0, i: 10.0, d: 1.0}            
+
+frhp_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_frhp
+    pid: {p: 100.0, i: 10.0, d: 1.0}
+
+frkp_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_frkp
+    pid: {p: 100.0, i: 10.0, d: 1.0}
+
+rrhr_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_rrhr
+    pid: {p: 100.0, i: 10.0, d: 1.0}
+
+rrhp_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_rrhp
+    pid: {p: 100.0, i: 10.0, d: 1.0}
+
+rrkp_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_rrkp
+    pid: {p: 100.0, i: 10.0, d: 1.0}
+
+flhr_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_flhr
+    pid: {p: 100.0, i: 10.0, d: 1.0}
+
+flhp_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_flhp
+    pid: {p: 100.0, i: 10.0, d: 1.0}
+
+flkp_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_flkp
+    pid: {p: 100.0, i: 10.0, d: 1.0}        
+
+rlhr_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_rlhr 
+    pid: {p: 100.0, i: 10.0, d: 1.0}
+
+rlhp_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_rlhp
+    pid: {p: 100.0, i: 10.0, d: 1.0}
+
+rlkp_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: j_rlkp
+    pid: {p: 100.0, i: 10.0, d: 1.0}
