@@ -1,6 +1,5 @@
 # tow_ws
 ros workspace containing packages used at work
-
 copy package folders and run (in workspace's directory):
   
   catkin_make
