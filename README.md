@@ -1,12 +1,13 @@
 # tow_ws
 ros workspace containing packages used at work
+
 copy package folders and run (in workspace's directory):
   
-  catkin_make
+    catkin_make
   
 to make the workspace then (in workspace's directory):
 
-  source devel/setup.bash
+    source devel/setup.bash
 
 description_v2 package: contains robot urdf and launch files which launches the robot in a gazebo simulation along with rgbd camera and controllable joints
 
