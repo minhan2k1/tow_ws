@@ -1,6 +1,19 @@
 # tow_ws
 ros workspace containing packages used at work
 
+Prerequisites:
+  Run
+
+    sudo apt-get install ros-noetic-octomap
+    
+  to install OctoMap as stand-alone libraries with no ROS dependencies (so the package can also be used in a non-ROS setting).
+  
+  Run
+  
+    sudo apt install ros-noetic-moveit
+    
+  to install moveit and its packages
+
 description_v2 package: contains robot urdf and launch files which launches the robot in a gazebo simulation along with rgbd camera and controllable joints
 
 description_v2_moveit package: using moveit to motion plan and control the robot (launch demo_gazebo.launch to launch rviz and gazebo and control the robot there)
