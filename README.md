@@ -1,5 +1,5 @@
 # tow_ws
-ros workspace containing packages used at work
+ros (noetic) workspace containing packages used at work
 
 Prerequisites:
 
