@@ -21,7 +21,7 @@ description_v2_moveit package: using moveit to motion plan and control the robot
 
 robot_control package: contains 2 scripts which once run after demo_gazebo.launch has been executed will get the robot to sit or stand.
 
-copy package folders and run (in workspace's directory):
+copy package folders into src folder and run (in workspace's directory):
   
     catkin_make
   
