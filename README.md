@@ -13,9 +13,9 @@ launching:
     roslaunch description_v2_moveit demo_gazebo.launch
     
 (optional) then:
-  rosrun robot_control robot_stand
+    rosrun robot_control robot_stand
 to stand
-  rosrun robot_control robot_sit
+    rosrun robot_control robot_sit
 to sit
   
     in rviz add image and pointcloud2 with corresponding topics to view camera inputs
