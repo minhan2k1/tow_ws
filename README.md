@@ -1,6 +1,14 @@
 # tow_ws
 ros workspace containing packages used at work
 
+copy package folders and run (in workspace's directory)
+  
+  catkin_make
+  
+to make the workspace then (in workspace's directory)
+
+  source devel/setup.bash
+
 description_v2 package: contains robot urdf and launch files which launches the robot in a gazebo simulation along with rgbd camera and controllable joints
 
 description_v2_moveit package: using moveit to motion plan and control the robot (launch demo_gazebo.launch to launch rviz and gazebo and control the robot there)
