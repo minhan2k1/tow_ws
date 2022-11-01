@@ -1,11 +1,11 @@
 # tow_ws
 ros workspace containing packages used at work
 
-copy package folders and run (in workspace's directory)
+copy package folders and run (in workspace's directory):
   
   catkin_make
   
-to make the workspace then (in workspace's directory)
+to make the workspace then (in workspace's directory):
 
   source devel/setup.bash
 
